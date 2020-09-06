@@ -40,9 +40,8 @@ class MainActivity: AppCompatActivity(), SensorEventListener {
              // You can register listener to get data and use them.
             isAvalaible = true
             stepSensor = sm.getDefaultSensor(Sensor.TYPE_STEP_DETECTOR)
-            sm.registerListener(this as SensorEventListener, stepSensor, SensorManager.SENSOR_DELAY_NORMAL)
+
             Log.d("A", "${stepSensor}")
-            Log.d("BAC", "${sm.registerListener(this, stepSensor, SensorManager.SENSOR_DELAY_NORMAL)}")
 
 
         } else {
@@ -64,9 +63,7 @@ class MainActivity: AppCompatActivity(), SensorEventListener {
         Log.d("X", "${sm.registerListener(this, stepSensor, SensorManager.SENSOR_DELAY_NORMAL)}")
     }
 
-    override fun onAccuracyChanged(sensor: Sensor?, accuracy: Int) {
-        TODO("Not yet implemented")
-    }
+    override fun onAccuracyChanged(sensor: Sensor?, accuracy: Int) {}
 
     @Override
     override fun onPause() {
